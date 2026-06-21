@@ -67,7 +67,7 @@ impl TelemetryRingBuffer {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use ndis_controller::{NDIS_TELEMETRY_VERSION, TelemetryEventKind};
+    use ndis_controller::{TelemetryEventKind, NDIS_TELEMETRY_VERSION};
 
     fn sample_event(kind: TelemetryEventKind) -> NdisTelemetryEventV2 {
         NdisTelemetryEventV2 {
@@ -86,8 +86,12 @@ mod tests {
     #[test]
     fn ring_buffer_drops_when_full() {
         let mut ring = TelemetryRingBuffer::new(2);
-        assert!(ring.push(sample_event(TelemetryEventKind::Classify)).is_ok());
-        assert!(ring.push(sample_event(TelemetryEventKind::Redirect)).is_ok());
+        assert!(ring
+            .push(sample_event(TelemetryEventKind::Classify))
+            .is_ok());
+        assert!(ring
+            .push(sample_event(TelemetryEventKind::Redirect))
+            .is_ok());
         assert!(ring.push(sample_event(TelemetryEventKind::Error)).is_err());
         let batch = ring.drain(10);
         assert_eq!(batch.events.len(), 2);

@@ -150,10 +150,7 @@ impl KernelSecurityPolicy {
     }
 }
 
-fn require_input<'a>(
-    input: Option<&'a [u8]>,
-    min_len: usize,
-) -> Result<&'a [u8], SecurityError> {
+fn require_input<'a>(input: Option<&'a [u8]>, min_len: usize) -> Result<&'a [u8], SecurityError> {
     let input = input.ok_or(SecurityError::InvalidInputSize)?;
     if input.len() < min_len {
         return Err(SecurityError::InvalidInputSize);
@@ -213,12 +210,8 @@ mod tests {
     #[test]
     fn validates_set_route_version() {
         let policy = KernelSecurityPolicy::new();
-        let mut route = NdisRouteAssignmentV2::new_vpn(
-            uuid::Uuid::new_v4(),
-            uuid::Uuid::new_v4(),
-            1,
-            42,
-        );
+        let mut route =
+            NdisRouteAssignmentV2::new_vpn(uuid::Uuid::new_v4(), uuid::Uuid::new_v4(), 1, 42);
         route.version = 99;
         let bytes = unsafe {
             std::slice::from_raw_parts(

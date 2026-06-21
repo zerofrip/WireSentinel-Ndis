@@ -200,7 +200,12 @@ pub fn uuid_to_bytes(id: uuid::Uuid) -> [u8; 16] {
 }
 
 impl NdisRouteAssignmentV2 {
-    pub fn new_vpn(flow_id: uuid::Uuid, app_id: uuid::Uuid, profile_id: u64, interface_luid: u64) -> Self {
+    pub fn new_vpn(
+        flow_id: uuid::Uuid,
+        app_id: uuid::Uuid,
+        profile_id: u64,
+        interface_luid: u64,
+    ) -> Self {
         Self {
             version: NDIS_ROUTE_ASSIGNMENT_VERSION,
             flow_id: uuid_to_bytes(flow_id),
@@ -214,7 +219,12 @@ impl NdisRouteAssignmentV2 {
         }
     }
 
-    pub fn new_proxy(flow_id: uuid::Uuid, app_id: uuid::Uuid, profile_id: u64, socks_port: u16) -> Self {
+    pub fn new_proxy(
+        flow_id: uuid::Uuid,
+        app_id: uuid::Uuid,
+        profile_id: u64,
+        socks_port: u16,
+    ) -> Self {
         Self {
             version: NDIS_ROUTE_ASSIGNMENT_VERSION,
             flow_id: uuid_to_bytes(flow_id),

@@ -1,6 +1,6 @@
 mod agent;
 
-pub use agent::{NdisAgent, NdisAgentError, AgentSnapshot};
+pub use agent::{AgentSnapshot, NdisAgent, NdisAgentError};
 pub use ndis_controller::{
     CoverTrafficMode, NdisClient, NdisError, ObfuscationPreset, RedirectAction,
 };

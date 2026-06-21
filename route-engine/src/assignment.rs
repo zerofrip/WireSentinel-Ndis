@@ -1,4 +1,4 @@
-use ndis_controller::{NdisRouteAssignmentV2, NdisRouteKind, uuid_to_bytes};
+use ndis_controller::{uuid_to_bytes, NdisRouteAssignmentV2, NdisRouteKind};
 use uuid::Uuid;
 
 #[derive(Debug, Clone, PartialEq, Eq)]

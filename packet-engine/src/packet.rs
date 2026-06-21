@@ -29,7 +29,6 @@ impl IpProtocol {
     }
 }
 
-
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ParsedPacket {
     pub protocol: IpProtocol,
@@ -76,8 +75,8 @@ impl ParsedPacket {
         }
         let protocol = IpProtocol::from_number(raw[6]);
         let src = Ipv6Addr::from([
-            raw[8], raw[9], raw[10], raw[11], raw[12], raw[13], raw[14], raw[15], raw[16],
-            raw[17], raw[18], raw[19], raw[20], raw[21], raw[22], raw[23],
+            raw[8], raw[9], raw[10], raw[11], raw[12], raw[13], raw[14], raw[15], raw[16], raw[17],
+            raw[18], raw[19], raw[20], raw[21], raw[22], raw[23],
         ]);
         let dst = Ipv6Addr::from([
             raw[24], raw[25], raw[26], raw[27], raw[28], raw[29], raw[30], raw[31], raw[32],

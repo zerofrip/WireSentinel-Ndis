@@ -33,7 +33,10 @@ impl NdisClient {
         Err(NdisError::NotWindows)
     }
 
-    pub fn set_transform_profile(&self, _profile: &NdisTransformProfileV2) -> Result<(), NdisError> {
+    pub fn set_transform_profile(
+        &self,
+        _profile: &NdisTransformProfileV2,
+    ) -> Result<(), NdisError> {
         Err(NdisError::NotWindows)
     }
 

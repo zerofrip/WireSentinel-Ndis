@@ -1,7 +1,7 @@
 use crate::ring::DrainBatch;
 use ndis_controller::{
-    NDIS_TELEMETRY_RING_CAPACITY, NDIS_TELEMETRY_VERSION, NdisTelemetryEventV2, NdisTelemetrySummaryV2,
-    TelemetryEventKind, uuid_to_bytes,
+    uuid_to_bytes, NdisTelemetryEventV2, NdisTelemetrySummaryV2, TelemetryEventKind,
+    NDIS_TELEMETRY_RING_CAPACITY, NDIS_TELEMETRY_VERSION,
 };
 use uuid::Uuid;
 

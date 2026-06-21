@@ -148,23 +148,13 @@ mod tests {
         let mut classifier = PacketClassifier::new();
         let app_id = Uuid::new_v4();
         classifier.register_process(4242, app_id);
-        classifier.set_app_route(
-            app_id,
-            RouteHint::Vpn {
-                profile_id: 99,
-            },
-        );
+        classifier.set_app_route(app_id, RouteHint::Vpn { profile_id: 99 });
         classifier.set_app_obfuscation(app_id, ObfuscationPreset::Balanced);
         let result = classifier
             .classify_ipv4(&sample_udp_packet(), 4242, FlowDirection::Outbound)
             .expect("classified");
         assert_eq!(result.app_id, Some(app_id));
-        assert_eq!(
-            result.route,
-            RouteHint::Vpn {
-                profile_id: 99
-            }
-        );
+        assert_eq!(result.route, RouteHint::Vpn { profile_id: 99 });
         assert_eq!(result.obfuscation, ObfuscationPreset::Balanced);
         assert_eq!(result.protocol, IpProtocol::Udp);
         assert_eq!(classifier.active_flow_count(), 1);
