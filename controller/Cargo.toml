@@ -1,0 +1,16 @@
+[package]
+name = "ndis-controller"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "WireSentinel NDIS LWF driver IOCTL client"
+
+[dependencies]
+thiserror.workspace = true
+uuid.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+windows.workspace = true
+
+[dev-dependencies]
+tempfile = "3"

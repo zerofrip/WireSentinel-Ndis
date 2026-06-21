@@ -1,0 +1,15 @@
+[package]
+name = "ndis-sdk"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "WireSentinel NDIS agent SDK"
+
+[dependencies]
+ndis-controller = { path = "../controller" }
+packet-engine = { path = "../packet-engine" }
+route-engine = { path = "../route-engine" }
+obfuscation = { path = "../obfuscation" }
+telemetry = { path = "../telemetry" }
+uuid.workspace = true
+thiserror.workspace = true

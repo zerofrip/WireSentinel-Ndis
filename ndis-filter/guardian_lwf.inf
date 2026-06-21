@@ -1,0 +1,62 @@
+;
+; WireSentinel NDIS Lightweight Filter — guardian_lwf.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = NetService
+ClassGUID   = {4D36E974-E325-11CE-BFC1-08002BE10318}
+Provider    = %ProviderString%
+CatalogFile = guardian_lwf.cat
+DriverVer   = 06/21/2026,0.1.0.0
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTamd64.10.0...19041,NTarm64.10.0...19041
+
+[Standard.NTamd64.10.0...19041]
+%GuardianLwf_Desc% = Install, WireSentinelNdis
+
+[Standard.NTarm64.10.0...19041]
+%GuardianLwf_Desc% = Install, WireSentinelNdis
+
+[Install]
+AddReg          = Inst_Ndi
+CopyFiles       = guardian_lwf.copyfiles.sys
+
+[Install.Services]
+AddService = WireSentinelNdis, 2, GuardianLwf_Service_Inst
+
+[Inst_Ndi]
+HKR, Ndi, Service, 0, "WireSentinelNdis"
+HKR, Ndi, CoServices, 0x00010000, "WireSentinelNdis"
+HKR, Ndi, HelpText, 0, %GuardianLwf_Help%
+HKR, Ndi, FilterClass, 0, "ms_medium_filter_top"
+HKR, Ndi, FilterType, 0x00000002, 0x00000001
+HKR, Ndi, FilterRunType, 0x00000002, 0x00000001
+
+[GuardianLwf_Service_Inst]
+DisplayName     = %GuardianLwf_Desc%
+ServiceType     = 1
+StartType       = 3
+ErrorControl    = 1
+ServiceBinary   = %12%\guardian_lwf.sys
+
+[guardian_lwf.copyfiles.sys]
+guardian_lwf.sys
+
+[DestinationDirs]
+guardian_lwf.copyfiles.sys = 12
+
+[SourceDisksNames]
+1 = %DiskId1%,,,
+
+[SourceDisksFiles]
+guardian_lwf.sys = 1
+
+[Strings]
+ProviderString    = "WireSentinel"
+ManufacturerName  = "WireSentinel"
+GuardianLwf_Desc  = "WireSentinel NDIS Guardian LWF"
+GuardianLwf_Help  = "Packet classification, redirect, and obfuscation filter"
+DiskId1           = "WireSentinel NDIS Installation Disk"
