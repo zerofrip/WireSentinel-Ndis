@@ -28,6 +28,7 @@ pub enum SecurityError {
 
 /// Validates NDIS IOCTL buffers before they reach the kernel driver.
 pub struct KernelSecurityPolicy {
+    #[cfg_attr(not(windows), allow(dead_code))]
     service_pid: Option<u32>,
 }
 
