@@ -2,6 +2,9 @@
 
 #include <ndis.h>
 
+#include "../shared/ndis_public.h"
+#include "telemetry/telemetry.h"
+
 typedef struct _NDIS_FILTER_CONTEXT {
     NDIS_HANDLE FilterHandle;
     NDIS_HANDLE FilterDriverHandle;
