@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdint.h>
+#include "../ndis_types.h"
 
 #define NDIS_COVER_TRAFFIC_VERSION 2
 

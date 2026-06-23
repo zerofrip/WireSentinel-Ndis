@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdint.h>
+#include "../ndis_types.h"
 
 #define NDIS_ROUTE_ASSIGNMENT_VERSION 2
 #define NDIS_MAX_SYNC_ROUTES 512

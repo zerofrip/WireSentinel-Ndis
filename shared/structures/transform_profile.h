@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdint.h>
+#include "../ndis_types.h"
 
 #define NDIS_TRANSFORM_PROFILE_VERSION 2
 #define NDIS_MAX_TRANSFORM_MODULES 8

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdint.h>
+#include "../ndis_types.h"
 
 #define NDIS_TELEMETRY_VERSION 2
 #define NDIS_TELEMETRY_RING_CAPACITY 256

@@ -5,8 +5,6 @@
 #include "transform/transform.h"
 #include "telemetry/telemetry.h"
 
-NDIS_FILTER_PARTIAL_CHARACTERISTICS FilterCharacteristics = { 0 };
-
 static NDIS_HANDLE g_FilterDriverHandle = NULL;
 
 _Use_decl_annotations_

@@ -22,5 +22,3 @@ FILTER_RESTART FilterRestart;
 FILTER_PAUSE FilterPause;
 FILTER_SEND_NET_BUFFER_LISTS FilterSendNetBufferLists;
 FILTER_RECEIVE_NET_BUFFER_LISTS FilterReceiveNetBufferLists;
-
-extern NDIS_FILTER_PARTIAL_CHARACTERISTICS FilterCharacteristics;

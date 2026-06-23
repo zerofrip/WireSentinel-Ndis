@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdint.h>
+#include "../ndis_types.h"
 
 #define NDIS_REDIRECT_RULE_VERSION 2
 #define NDIS_MAX_REDIRECT_RULES 256
