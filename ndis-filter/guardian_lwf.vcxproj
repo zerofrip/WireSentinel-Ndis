@@ -108,8 +108,5 @@
     <ClCompile Include="transform\transform.c" />
     <ClCompile Include="telemetry\telemetry.c" />
   </ItemGroup>
-  <ItemGroup>
-    <Inf Include="guardian_lwf.inf" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
