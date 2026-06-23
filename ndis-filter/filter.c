@@ -156,10 +156,10 @@ DriverEntry(
 
     RtlZeroMemory(&fdc, sizeof(fdc));
     fdc.Header.Type = NDIS_OBJECT_TYPE_FILTER_DRIVER_CHARACTERISTICS;
-    fdc.Header.Revision = NDIS_FILTER_DRIVER_CHARACTERISTICS_REVISION_2;
-    fdc.Header.Size = NDIS_SIZEOF_FILTER_DRIVER_CHARACTERISTICS_REVISION_2;
+    fdc.Header.Revision = NDIS_FILTER_CHARACTERISTICS_REVISION_3;
+    fdc.Header.Size = NDIS_SIZEOF_FILTER_DRIVER_CHARACTERISTICS_REVISION_3;
     fdc.MajorNdisVersion = 6;
-    fdc.MinorNdisVersion = 30;
+    fdc.MinorNdisVersion = 80;
     fdc.MajorDriverVersion = 0;
     fdc.MinorDriverVersion = 1;
     fdc.Flags = 0;
